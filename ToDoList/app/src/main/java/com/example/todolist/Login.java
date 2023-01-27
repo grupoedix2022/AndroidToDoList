@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -79,8 +81,15 @@ public class Login extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        //Crear Usuario Base de datos
-                                        Toast.makeText(Login.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+                                        Toast toast = new Toast(getApplicationContext());
+                                        LayoutInflater inflater = getLayoutInflater();
+                                        View layout = inflater.inflate(R.layout.toast_layout,
+                                                (ViewGroup) findViewById(R.id.lytLayout));
+                                        TextView txtMsg = (TextView)layout.findViewById(R.id.txtMensaje);
+                                        txtMsg.setText("Usuario registrado");
+                                        toast.setDuration(Toast.LENGTH_SHORT);
+                                        toast.setView(layout);
+                                        toast.show();
                                         Intent intent = new Intent(Login.this, SplashActivity2.class);
                                         startActivity(intent);
                                     } else {

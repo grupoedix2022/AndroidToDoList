@@ -8,9 +8,11 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -134,6 +136,16 @@ public class MainActivity extends AppCompatActivity {
 
             db.collection("Tareas").document(listaIdTareas.get(posicion)).delete();
 
+            Toast toast = new Toast(getApplicationContext());
+            LayoutInflater inflater = getLayoutInflater();
+            View layout = inflater.inflate(R.layout.toast_layout,
+                    (ViewGroup) findViewById(R.id.lytLayout));
+            TextView txtMsg = (TextView)layout.findViewById(R.id.txtMensaje);
+            txtMsg.setText("Tarea realizada");
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout);
+            toast.show();
+
         }
 
         public void editarTarea (View view){
@@ -144,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             final EditText taskEditText = new EditText(this);
+            taskEditText.setText(tarea);
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Editar Tarea");
             builder.setMessage("¿Qué quieres hacer?");
