@@ -4,26 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/softyellow"
+    android:background="@drawable/background"
     tools:context=".SplashActivity2">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="252dp"
-        android:layout_height="265dp"
+        android:id="@+id/logosplash2"
+        android:layout_width="157dp"
+        android:layout_height="179dp"
         android:layout_marginTop="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/notebook" />
     <TextView
-        android:id="@+id/cargando"
+        android:id="@+id/bienvenido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Cargando"
+        android:text="@string/bienvedido"
+        android:fontFamily="@font/classroom"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logosplash2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

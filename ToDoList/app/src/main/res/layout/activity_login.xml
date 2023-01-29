@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/softyellow"
+    android:background="@drawable/background"
     tools:context=".Login">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/robo"
+        android:fontFamily="@font/classroom"
         android:text="@string/mis_tareas"
         android:textColor="@color/grey"
         android:textSize="50sp"
@@ -33,7 +33,7 @@
             android:id="@+id/cajaCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/softyellow"
+            android:background="@android:color/transparent"
             android:hint="@string/hintCorreo"
             android:textSize="16sp" />
 
@@ -53,7 +53,7 @@
             android:id="@+id/cajaPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/softyellow"
+            android:background="@android:color/transparent"
             android:hint="@string/hintPass"
             android:inputType="textPassword"
             android:textSize="16sp"/>

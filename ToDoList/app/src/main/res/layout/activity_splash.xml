@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/softyellow"
+    android:background="@drawable/background"
     tools:context=".SplashActivity">
 
     <ImageView
@@ -17,11 +17,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/notebook" />
     <TextView
-        android:id="@+id/cargando"
+        android:id="@+id/todolist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="TO DO LIST APP"
+        android:text="MIS TAREAS APP"
+        android:fontFamily="@font/classroom"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
