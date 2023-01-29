@@ -3,6 +3,7 @@ package com.example.todolist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -26,6 +27,9 @@ public class SplashActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.school_app);
+        mediaPlayer.start();
+
         animtext = AnimationUtils.loadAnimation(this,R.anim.anmationtext);
         animlogo = AnimationUtils.loadAnimation(this, R.anim.animationlogo);
         logo = (ImageView) findViewById(R.id.logo);
@@ -37,11 +41,11 @@ public class SplashActivity extends AppCompatActivity {
         timer.schedule(new TimerTask(){
             @Override
             public void run() {
-
+                mediaPlayer.stop();
                 Intent intent = new Intent(SplashActivity.this, Login.class);
                 startActivity(intent);
                 finish();
             }
-        }, 3000);
+        }, 2800);
     }
 }
